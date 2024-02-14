@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="jumbotron">
+    <h1 class="display-4">Student App!</h1>
+    <p class="lead">This is simple student application. In this app we will explore more about Angular.</p>
+  </div>
+  <div>
+    <app-add-student (add)="addStudent($event)"></app-add-student>
+  </div>
+
+  <div *ngIf="students.length > 0; else noStudent">
+    <div *ngFor="let s of students">
+      <app-list-students [student]="s"></app-list-students>
+    </div>
+  </div>
+
+  <ng-template #noStudent>
+    <p class="">No Student Present</p>
+  </ng-template>
+</div>
