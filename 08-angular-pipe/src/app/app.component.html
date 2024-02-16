@@ -1,11 +1,11 @@
 <div class="container">
   <h1 class="text-light bg-dark p-5">Learning Angular Pipe</h1>
   <p>{{companyName | uppercase}}</p>
-  <p>{{num | percent}}</p>
+  <p>{{num/100 | percent}}</p>
   <p>{{num | currency}}</p>
   <p>{{num | currency:"INR"}}</p>
   <p>{{student | json}}</p>
-  <p>{{studentNames | slice:2-6}}</p>
+  <p>{{studentNames | slice:2:4}}</p>
   <hr>
   <input type="text" [(ngModel)]="name">
   <p *ngFor="let n of studentNames | search : name">

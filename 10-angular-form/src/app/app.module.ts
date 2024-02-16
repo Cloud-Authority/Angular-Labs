@@ -1,24 +1,25 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
+import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { DemoComponent } from './demo/demo.component';
-import { FormsModule } from '@angular/forms';
+import { TdfComponent } from './tdf/tdf.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RtfComponent } from './rtf/rtf.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DemoComponent
+    TdfComponent,
+    RtfComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [
-    provideClientHydration()
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

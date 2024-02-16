@@ -1,0 +1,19 @@
+<table class="table">
+    <thead>
+        <tr *ngIf="students.length > 0; else noStudent">
+            <th>Roll Number</th>
+            <th>Student Name</th>
+            <th>Student Score</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let s of students" [ngStyle]="{'background-color': getBackgroundColor()}">
+            <td>{{s.rollNumber}}</td>
+            <td>{{s.studentName | titlecase}}</td>
+            <td [ngClass]="{color: s.studentScore < 60}">{{s.studentScore/100 | percent}}</td>
+        </tr>
+    </tbody>
+</table>
+<ng-template #noStudent>
+    <p class="alert alert-danger">No Student found in database.</p>
+</ng-template>
